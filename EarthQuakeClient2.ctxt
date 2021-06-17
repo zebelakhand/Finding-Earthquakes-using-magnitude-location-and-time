@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=EarthQuakeClient2
+comment1.params=
+comment1.target=EarthQuakeClient2()
+comment2.params=quakeData\ f
+comment2.target=java.util.ArrayList\ filter(java.util.ArrayList,\ Filter)
+comment3.params=
+comment3.target=void\ quakesWithFilter()
+comment4.params=
+comment4.target=void\ createCSV()
+comment4.text=public\ void\ quakesWithFilter()\ {\r\n\ \ \ \ \ \ \ \ EarthQuakeParser\ parser\ \=\ new\ EarthQuakeParser();\r\n\ \ \ \ \ \ \ \ String\ source\ \=\ "data/nov20quakedata.atom";\r\n\ \ \ \ \ \ \ \ ArrayList<QuakeEntry>\ list\ \=\ parser.read(source);\r\n\ \ \ \ \ \ \ \ System.out.println("read\ data\ for\ "+list.size()+"\ quakes");\r\n\ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ //Location\ of\ Tokyo,\ Japan\r\n\ \ \ \ \ \ \ \ Location\ denver\ \=\ new\ Location(39.7392,\ -104.9903);\r\n\ \ \ \ \ \ \ \ Filter\ f1\ \=\ new\ DistanceFilter(denver,\ 1000000);\r\n\ \ \ \ \ \ \ \ ArrayList<QuakeEntry>\ qeAfterF1\ \=\ filter(list,\ f1);\r\n\ \ \ \ \ \ \ \ Filter\ f2\ \=\ new\ PhraseFilter("end",\ "a");\r\n\ \ \ \ \ \ \ \ ArrayList<QuakeEntry>\ qeAfterF2\ \=\ filter(qeAfterF1,\ f2);\r\n\ \ \ \ \ \ \ \ for\ (QuakeEntry\ qe\ \:\ qeAfterF2){\r\n\ \ \ \ \ \ \ \ \ \ \ \ //System.out.print(denver.distanceTo(qe.getLocation())\ +"\ \ ");\r\n\ \ \ \ \ \ \ \ \ \ \ \ System.out.println(qe);\r\n\ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ System.out.println("Found\ "+qeAfterF2.size()+"\ earthquakes\ that\ matches\ the\ criteria");\r\n}
+comment5.params=list
+comment5.target=void\ dumpCSV(java.util.ArrayList)
+numComments=6
